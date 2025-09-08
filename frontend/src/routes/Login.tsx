@@ -1,5 +1,6 @@
 // frontend/src/routes/Login.tsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { login, register } from '../api';
 
 type Props = { onAuthed: (token: string) => void };
@@ -11,20 +12,33 @@ const Login: React.FC<Props> = ({ onAuthed }) => {
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate(); // <-- เพิ่ม navigate
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true); setError(null);
+
     try {
       if (mode === 'login') {
         const res = await login(email, password);
-        console.log('login res', res);
+
+        // เก็บ token และ user info
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('user', JSON.stringify(res.user));
+
         onAuthed(res.token);
       } else {
         const res = await register(name, email, password);
-        console.log('register res', res);
+
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('user', JSON.stringify(res.user));
+
         onAuthed(res.token);
       }
+
+      // redirect กลับหน้า Home หลังล็อคอิน/สมัครเสร็จ
+      navigate('/');
+
     } catch (err: any) {
       setError(err?.response?.data?.message || err.message || 'Request failed');
     } finally {

@@ -25,12 +25,20 @@ function App() {
     navigate('/login');
   };
 
+  // ฟังก์ชัน scroll ไป section ในหน้า Home
+  const scrollToSection = (sectionId: string) => {
+    const el = document.getElementById(sectionId);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <header className="topbar">
-        <div className="logo">1nr Racing Team</div>
+        <div className="logo" onClick={() => navigate('/')}>1nr Racing Team</div>
         <nav>
           <Link to="/">Home</Link>
+          <Link to="/" onClick={() => scrollToSection('news')}>News</Link>
+          <Link to="/" onClick={() => scrollToSection('contact')}>Contact</Link>
           {token ? (
             <button className="cta" onClick={logout}>Logout</button>
           ) : (
