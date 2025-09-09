@@ -49,10 +49,10 @@ const Login: React.FC<Props> = ({ onAuthed }) => {
   return (
     <div className="auth-wrap">
       <div className="auth-card">
-        <div className="tabs">
+        <di className="tabs">
           <button className={mode==='login'?'active':''} onClick={()=>setMode('login')}>Login</button>
           <button className={mode==='signup'?'active':''} onClick={()=>setMode('signup')}>Sign Up</button>
-        </div>
+        </di>
 
         <form onSubmit={submit}>
           {mode === 'signup' && (

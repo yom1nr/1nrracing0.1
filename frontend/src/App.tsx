@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Home from './routes/Home';
 import Login from './routes/Login';
+import Race from './routes/Race';
 
 function App() {
   const navigate = useNavigate();
@@ -49,6 +50,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/race" element={<Race />} />  {/* เพิ่มบรรทัดนี้ */}
         <Route path="/login" element={<Login onAuthed={handleAuthed} />} />
       </Routes>
 

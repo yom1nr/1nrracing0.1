@@ -11,6 +11,12 @@
       "name": "santi",
       "email": "hotest224e@gmail.com",
       "passwordHash": "$2a$08$Xnz/iy7KY7ungWyoPnC95Ozg9PeyMMk0SJinGjvRvjKF38kus2VaK"
+    },
+    {
+      "id": "2",
+      "name": "santi",
+      "email": "adidaslmayom@gmail.com",
+      "passwordHash": "$2a$08$U88Jqhaxdr9e9VrVx3dTJ.ZFHed4vq3wRAnVB1NwAz2k1bp9.Q.tm"
     }
   ]
 }
