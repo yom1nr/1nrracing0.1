@@ -4,7 +4,7 @@ import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Home from './routes/Home';
 import Login from './routes/Login';
 import Race from './routes/Race';
-
+import RaceDetail from './routes/RaceDetail';
 function App() {
   const navigate = useNavigate();
   const [token, setToken] = useState<string | null>(null);
@@ -52,6 +52,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/race" element={<Race />} />  {/* เพิ่มบรรทัดนี้ */}
         <Route path="/login" element={<Login onAuthed={handleAuthed} />} />
+        <Route path="/race/:raceId" element={<RaceDetail />} />
       </Routes>
 
       <footer className="footer">© 2025 1nr Racing Team</footer>

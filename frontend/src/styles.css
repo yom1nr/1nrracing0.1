@@ -213,3 +213,17 @@ body {
   font-size: 16px;
   color: var(--muted);
 }
+/* frontend/src/styles/RaceDetail.css */
+.race-category {
+  margin-bottom: 40px;
+}
+
+.race-category img {
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.highlight-video {
+  margin-top: 40px;
+}
+
