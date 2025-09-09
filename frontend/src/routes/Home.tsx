@@ -1,6 +1,6 @@
-// frontend/src/routes/Home.tsx
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Home() {
@@ -23,13 +23,13 @@ function Home() {
 
       {/* News */}
       <section id="news" className="news">
-          <Link to="/race" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <article className="card">
+        <Link to="/race" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <article className="card">
             <img src="/assets/race1.jpg" alt="Race Highlights" className="card-img" />
             <h3>Race Result</h3>
             <p>All the action from the weekend.</p>
-        </article>
-      </Link>
+          </article>
+        </Link>
         <article className="card">
           <img src="/assets/team1.jpg" alt="Race Team Update" className="card-img" />
           <h3>Team Update</h3>
@@ -45,37 +45,27 @@ function Home() {
       {/* Contact */}
       <section id="contact" className="contact" style={{ padding: '40px', textAlign: 'center' }}>
         <h2>Contact :</h2>
-        <p>
-          <a 
-            href="https://www.facebook.com/1nrracing" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ textDecoration: 'none', color: '#e7e7e7' }}
-          >
-            <FaFacebookF style={{ marginRight: '8px', color: '#e7e7e7' }} />
-            Facebook: 1nr Racing Team
-          </a>
-
-        </p>
-        <p>
-          <a 
-            href="https://www.instagram.com/1nrracingteam" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ textDecoration: 'none', color: '#e7e7e7' }}
-          >
-            <FaInstagram style={{ marginRight: '8px', color: '#e7e7e7ff' }} />
-            Instagram: 1nrracingteam
-          </a>
-        </p>
-        <p>
-          <FaEnvelope style={{ marginRight: '8px', color: '#e7e7e7ff' }} />
-          Email: contact@1nrteam.com
-        </p>
+        <IconContext.Provider value={{ style: { marginRight: '8px', color: '#e7e7e7' } }}>
+          <p>
+            <a href="https://www.facebook.com/1nrracing" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#e7e7e7' }}>
+              <FaFacebookF />
+              Facebook: 1nr Racing Team
+            </a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/1nrracingteam" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#e7e7e7' }}>
+              <FaInstagram />
+              Instagram: 1nrracingteam
+            </a>
+          </p>
+          <p>
+            <FaEnvelope />
+            Email: contact@1nrteam.com
+          </p>
+        </IconContext.Provider>
       </section>
     </main>
   );
 }
-
 
 export default Home;
