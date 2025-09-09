@@ -19,7 +19,7 @@ function Home() {
         <article className="card">
           <img src="/assets/team1.jpg" alt="Race Team Update" className="card-img" />
           <h3>Team Update</h3>
-          <p>Season 2021 Result.</p>
+          <p>2021 Season Result.</p>
         </article>
         <article className="card">
           <img src="/assets/tech.jpg" alt="Tech Talk" className="card-img" />
